@@ -1,6 +1,11 @@
-import { createApp } from 'vue'
+import {
+    createApp
+} from 'vue'
 import App from './App.vue'
+import router from '@/router'
 
-import './assets/main.css'
+const app = createApp(App) // 生成 Vue 实例 app
 
-createApp(App).mount('#app')
+app.use(router) // 引用路由实例
+
+app.mount('#app') // 挂载到 #app
