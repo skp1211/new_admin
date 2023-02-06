@@ -1,6 +1,9 @@
 <template>
   <el-button type="primary">主要按钮</el-button>
   <el-button :plain="true" @click="open4">error</el-button>
+  <el-icon>
+    <Aim />
+  </el-icon>
 </template>
 
 <script setup>

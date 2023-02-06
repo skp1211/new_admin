@@ -18,6 +18,25 @@ import {
 export default ({
   mode
 }) => defineConfig({
+  plugins: [
+    vue(),
+    Components({
+      resolvers: [ElementPlusResolver({
+        // 自动引入修改主题色添加这一行，使用预处理样式
+        importStyle: 'sass'
+      })],
+    }),
+    // 自动引入
+    AutoImport({
+      resolvers: [ElementPlusResolver({
+        // 自动引入修改主题色添加这一行，使用预处理样式，不添加将会导致使用ElMessage，ElNotification等组件时默认的主题色会覆盖自定义的主题色  ---此处踩坑（默认主题色覆盖了自定义颜色，到处都没找到问题）
+        importStyle: 'sass'
+      })],
+    }),
+    Components({
+      resolvers: [ElementPlusResolver()],
+    }),
+  ],
   resolve: {
     alias: {
       // '@': fileURLToPath(new URL('./src', import.meta.url))
@@ -42,19 +61,5 @@ export default ({
         additionalData: `@use "@/styles/element/index.scss" as *;`,
       },
     },
-  },
-  plugins: [
-    vue(),
-    AutoImport({
-      resolvers: [ElementPlusResolver()],
-    }),
-    Components({
-      resolvers: [ElementPlusResolver()],
-    }),
-    Components({
-      resolvers: [ElementPlusResolver({
-        importStyle: 'sass'
-      })],
-    }),
-  ]
+  }
 })
