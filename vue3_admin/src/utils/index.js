@@ -1,4 +1,9 @@
 // 公用方法封装
+export const pathMap = {
+    index: '首页',
+    login: '登录',
+    add: '添加商品'
+}
 export function localGet(key) {
     const value = window.localStorage.getItem(key)
     try {
