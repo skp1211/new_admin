@@ -48,7 +48,7 @@ onMounted(() => {
 // 获取用户信息
 const getUserInfo = async () => {
   const userInfo = await axios.get("/adminUser/profile");
-  console.log(userInfo);
+  // console.log(userInfo);
   state.userInfo = userInfo;
 };
 // 退出登录
