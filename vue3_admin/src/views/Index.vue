@@ -62,7 +62,9 @@ onMounted(() => {
       },
       toolbox: {
         feature: {
-          saveAsImage: {},
+          saveAsImage: {
+            title: "保存图表",
+          },
         },
       },
       grid: {
