@@ -5,6 +5,7 @@ import {
 } from 'vue-router'
 import Index from '@/views/Index.vue'
 import AddGood from '@/views/AddGood.vue'
+import Swiper from '@/views/Swiper.vue'
 import Login from '@/views/Login.vue'
 
 const router = createRouter({
@@ -18,6 +19,11 @@ const router = createRouter({
             path: '/add',
             name: 'add',
             component: AddGood
+        },
+        {
+            path: '/swiper',
+            name: 'swiper',
+            component: Swiper
         },
         {
             path: '/login',
