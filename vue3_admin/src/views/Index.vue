@@ -37,12 +37,14 @@
 </template>
 
 <script setup>
+import * as echarts from 'echarts';
 import { onMounted, onUnmounted } from "vue";
 let myChart = null;
 onMounted(() => {
-  if (window.echarts) {
+  // window.echarts
+  if (true) {
     // 基于准备好的dom，初始化echarts实例
-    myChart = window.echarts.init(document.getElementById("zoom"));
+    myChart = echarts.init(document.getElementById("zoom"));
     // 指定图表的配置项和数据
     const option = {
       title: {
@@ -163,10 +165,12 @@ onUnmounted(() => {
   flex: auto;
   margin-top: 20px;
 }
+
 .introduce {
   height: 100%;
   box-sizing: border-box;
 }
+
 .introduce .el-card__body {
   height: 100%;
   box-sizing: border-box;

@@ -29,7 +29,7 @@
   </div>
 </template>
   
-  <script setup>
+<script setup>
 import axios from "@/utils/axios";
 // 安装 js-md5，密码需要 md5 加密，服务端是解密 md5 的形式
 import md5 from "js-md5";
@@ -81,7 +81,7 @@ const resetForm = () => {
 };
 </script>
   
-  <style scoped>
+<style scoped>
 .login-container {
   position: absolute;
   left: 50%;
@@ -93,37 +93,45 @@ const resetForm = () => {
   border-radius: 4px;
   box-shadow: 0px 21px 41px 0px rgba(0, 0, 0, 0.2);
 }
+
 .head {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 40px 0 20px 0;
 }
+
 .head img {
   width: 100px;
   height: 100px;
   margin-right: 20px;
 }
+
 .head .title {
   font-size: 28px;
   color: #1baeae;
   font-weight: bold;
 }
+
 .head .tips {
   font-size: 12px;
   color: #999;
 }
+
 .login-form {
   width: 70%;
   margin: 0 auto;
 }
-.login-form >>> .el-form--label-top .el-form-item__label {
+
+:deep(.el-form-item__label) {
   padding: 0;
 }
-.login-form >>> .el-form-item {
+
+:deep(.el-form-item) {
   margin-bottom: 20px;
 }
-.login-form >>> .el-form-item .el-form-item__content .el-form-item__error {
+
+:deep(.el-form-item__error) {
   padding-top: 6px;
 }
 </style>
