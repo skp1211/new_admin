@@ -18,7 +18,7 @@
               <span>今日日活</span>
             </div>
           </template>
-          <div class="item">36271</div>
+          <div class="item">9876</div>
         </el-card>
       </el-col>
       <el-col :span="8">
@@ -37,8 +37,10 @@
 </template>
 
 <script setup>
-import * as echarts from 'echarts';
-import { onMounted, onUnmounted } from "vue";
+// import * as echarts from 'echarts';
+// 引入echarts
+import echarts from "../echarts/echarts";
+import { onMounted, onUnmounted, ref, provide } from "vue";
 let myChart = null;
 onMounted(() => {
   // window.echarts
@@ -154,10 +156,16 @@ onMounted(() => {
     };
     // 使用刚指定的配置项和数据显示图表。
     option && myChart.setOption(option);
+
+
   }
 });
 onUnmounted(() => {
   myChart.dispose();
+  // 根据页面大小自动响应图表大小
+  window.addEventListener("resize", function () {
+    machart.resize();
+  });
 });
 </script>
 <style>

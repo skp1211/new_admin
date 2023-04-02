@@ -12,7 +12,8 @@
         </div>
         <!--一条为了美观的线条-->
         <div class="line" />
-        <el-menu background-color="#222832" text-color="#fff" :router="true" :unique-opened="true" :default-openeds="state.defaultOpen" :default-active='state.currentPath'>
+        <el-menu background-color="#222832" text-color="#fff" :router="true" :unique-opened="true"
+          :default-openeds="state.defaultOpen" :default-active='state.currentPath'>
           <!--一级栏目-->
           <el-sub-menu index="1">
             <template #title>
@@ -40,7 +41,7 @@
             <el-menu-item-group>
               <el-menu-item index="/swiper">
                 <el-icon>
-                  <DataLine />
+                  <Picture />
                 </el-icon>轮播图配置
               </el-menu-item>
 
@@ -105,20 +106,24 @@ router.beforeEach((to, from, next) => {
   min-height: 100vh;
   background-color: #ffffff;
 }
+
 .container {
   height: 100vh;
 }
+
 .aside {
   width: 200px !important;
   background-color: #222832;
 }
+
 .head {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 50px;
 }
-.head > div {
+
+.head>div {
   display: flex;
   align-items: center;
 }
@@ -128,26 +133,31 @@ router.beforeEach((to, from, next) => {
   height: 50px;
   margin-right: 10px;
 }
+
 .head span {
   font-size: 20px;
   color: #ffffff;
 }
+
 .line {
   border-top: 1px solid hsla(0, 0%, 100%, 0.05);
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
+
 .content {
   display: flex;
   flex-direction: column;
   max-height: 100vh;
   overflow: hidden;
 }
+
 .main {
   height: calc(100vh - 100px);
   overflow: auto;
   padding: 10px;
 }
-.aside >>> .el-menu {
+
+:deep(.el-menu) {
   border-right: none;
 }
 </style>
