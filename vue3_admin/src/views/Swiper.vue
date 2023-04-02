@@ -11,7 +11,7 @@
       </el-popconfirm>
     </div>
     <!-- :load="state.loading" -->
-    <el-table ref="multipleTable" :data="state.tableData" tooltip-effect="dark" style="width: 100%"
+    <el-table ref="multipleTable" :data="state.tableData" empty-text="暂无数据" tooltip-effect="dark" style="width: 100%"
       @selection-change="handleSelectionChange">
       <el-table-column type="selection" width="55">
       </el-table-column>
