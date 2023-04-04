@@ -55,6 +55,19 @@
                 </el-icon>为你推荐配置</el-menu-item>
             </el-menu-item-group>
           </el-sub-menu>
+          <el-sub-menu index="3">
+            <template #title>
+              <span>模块管理</span>
+            </template>
+            <el-menu-item-group>
+              <el-menu-item index="/category"><el-icon>
+                  <Menu />
+                </el-icon>分类管理</el-menu-item>
+              <el-menu-item index="/good"><el-icon>
+                  <Goods />
+                </el-icon>商品管理</el-menu-item>
+            </el-menu-item-group>
+          </el-sub-menu>
         </el-menu>
       </el-aside>
       <!--右边内容布局-->
@@ -85,7 +98,7 @@ const noMenu = ["/login"];
 const router = useRouter();
 const state = reactive({
   showMenu: true, // 是否需要显示菜单
-  // defaultOpen: ["1", "2"],
+  // defaultOpen: ["1", "2","3"],
   currentPath: "/",
 });
 // 监听路由的变化
@@ -174,4 +187,5 @@ body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-}</style>
+}
+</style>
