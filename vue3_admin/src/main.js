@@ -9,8 +9,22 @@ for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
   app.component(key, component);
 }
 
+const orderStatus = {
+  0: "待支付",
+  1: "已支付",
+  2: "配货完成",
+  3: "出库成功",
+  4: "交易成功",
+  "-1": "手动关闭",
+  "-2": "超时关闭",
+  "-3": "商家关闭",
+};
+
 // 全局方法
 app.config.globalProperties.$filters = {
+  orderMap(status) {
+    return orderStatus[status] || "未知状态";
+  },
   prefix(url) {
     if (url && url.startsWith("http")) {
       // 当 url 以 http 开头时候，我们返回原路径
